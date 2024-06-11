@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "9493a56c-450e-447f-b631-0c06d0991f29",
+		"name": "Website Hit Counter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36245268"
+	},
+	"item": [
+		{
+			"name": "VisitWebsite",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "ContentType",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": \"cust123\",\r\n  \"deviceId\": \"dev456\",\r\n  \"websiteId\": \"web789\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/visit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"visit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWebsiteVisitCountForCustomer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/customer_visit_count?customerId=cust123&websiteId=web789",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"customer_visit_count"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "cust123"
+						},
+						{
+							"key": "websiteId",
+							"value": "web789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOverallWebsiteHitCount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/overall_hit_count?websiteId=web789",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"overall_hit_count"
+					],
+					"query": [
+						{
+							"key": "websiteId",
+							"value": "web789"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
